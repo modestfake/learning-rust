@@ -3,14 +3,14 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-    println!("===== GUESS THE NUMBER! =====");
+    println!("\n\n===== 🎱 GUESS THE NUMBER! =====\n");
 
-    let secret_number = rand::thread_rng().gen_range(1, 101);
+    let secret_number = rand::thread_rng().gen_range(1..=100);
     let mut attempt = 0;
 
     loop {
         if attempt == 0 {
-            println!("👩‍✈️ Please input your guess.");
+            println!("👩‍✈️ Please input your guess between 1 and 100.");
         } else {
             println!("👩‍✈️ Please try again.");
         }
@@ -28,10 +28,10 @@ fn main() {
 
         attempt = attempt + 1;
 
-        println!("\n{}. You guessed: {}", attempt, guess);
+        println!("\n{attempt}. Your guess: {guess}");
 
         match guess.cmp(&secret_number) {
-            Ordering::Less => println!("🧐  Too small!\n"),
+            Ordering::Less => println!("🧐 Too small!\n"),
             Ordering::Greater => println!("😮 Too big!\n"),
             Ordering::Equal => {
                 println!("🎉 You win!\nAttempts: {}", attempt);
