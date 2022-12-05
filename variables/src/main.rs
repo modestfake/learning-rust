@@ -1,10 +1,11 @@
 fn main() {
     let mut x = 5;
-    println!("The value of x is: {}", x);
+    println!("The value of x is: {x}");
     x = 6;
-    println!("The value of x is: {}", x);
-    const TEST_TEST: u32 = 5;
-    println!("The value of x is: {}", TEST_TEST);
+    println!("The value of x is: {x}");
+
+    const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+    println!("The value of THREE_HOURS_IN_SECONDS is: {THREE_HOURS_IN_SECONDS}");
 
     let tup = (500, 6.4, 'A');
     let (_x, _y, _z) = tup;
